@@ -1,11 +1,11 @@
-# revision 31869
+# revision 32040
 # category Package
 # catalog-ctan /fonts/fbb
-# catalog-date 2013-10-09 07:11:28 +0200
+# catalog-date 2013-11-02 07:42:43 +0100
 # catalog-license ofl
-# catalog-version 0.93
+# catalog-version 1.00
 Name:		texlive-fbb
-Version:	0.93
+Version:	1.00
 Release:	1
 Summary:	A free Bembo-like font
 Group:		Publishing
