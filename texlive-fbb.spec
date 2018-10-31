@@ -1,6 +1,6 @@
 Name:		texlive-fbb
 Version:	1.14
-Release:	1
+Release:	2
 Summary:	A free Bembo-like font
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/fbb
