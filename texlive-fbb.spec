@@ -3,7 +3,7 @@ Version:	55728
 Release:	2
 Summary:	A free Bembo-like font
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/fonts/fbb
+URL:		https://www.ctan.org/tex-archive/fonts/fbb
 License:	OFL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/fbb.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/fbb.doc.r%{version}.tar.xz
