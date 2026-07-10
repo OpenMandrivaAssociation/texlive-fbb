@@ -1,51 +1,27 @@
-Name:		texlive-fbb
-Version:	55728
-Release:	2
+%global tl_name fbb
+%global tl_revision 77682
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.16
+Release:	%{tl_revision}.1
 Summary:	A free Bembo-like font
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/fonts/fbb
-License:	OFL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/fbb.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/fbb.doc.r%{version}.tar.xz
+License:	ofl lppl1.3
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/fbb.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/fbb.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The package provides a Bembo-like font package based on Cardo
-but with many modifications, adding Bold Italic, small caps in
-all styles, six figure choices in all styles, updated kerning
-tables, added figure tables and corrected f-ligatures. Both
-OpenType and Adobe Type 1 versions are provided; all necessary
-support files are provided. The font works well with
-newtxmath's libertine option.
+The package provides a Bembo-like font package based on Cardo but with
+many modifications, adding Bold Italic, small caps in all styles, six
+figure choices in all styles, updated kerning tables, added figure
+tables and corrected f-ligatures. Both OpenType and Adobe Type 1
+versions are provided; all necessary support files are provided. The
+font works well with newtxmath's libertine option.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/fonts/enc/dvips/fbb
-%{_texmfdistdir}/fonts/map/dvips/fbb
-%{_texmfdistdir}/fonts/opentype/public/fbb
-%{_texmfdistdir}/fonts/tfm/public/fbb
-%{_texmfdistdir}/fonts/type1/public/fbb
-%{_texmfdistdir}/fonts/vf/public/fbb
-%{_texmfdistdir}/tex/latex/fbb
-%doc %{_texmfdistdir}/doc/fonts/fbb
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar fonts tex doc %{buildroot}%{_texmfdistdir}
